@@ -523,12 +523,12 @@ namespace Microsoft.PowerShell.Commands {
 #if PREVIEW2
     [System.Management.Automation.ParameterAttribute]
     public Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding Encoding { get { return default(Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding); } set { } }
-#endif
     public System.Text.Encoding EncodingType { get { return default(System.Text.Encoding); } }
     [System.Management.Automation.ParameterAttribute]
     public string Stream { [System.Runtime.CompilerServices.CompilerGeneratedAttribute]get { return default(string); } [System.Runtime.CompilerServices.CompilerGeneratedAttribute]set { } }
     public bool UsingByteEncoding { get { return default(bool); } }
     public bool WasStreamTypeSpecified { get { return default(bool); } }
+#endif
      
   }
   public class FileSystemContentReaderDynamicParameters : Microsoft.PowerShell.Commands.FileSystemContentDynamicParametersBase {
@@ -627,10 +627,11 @@ namespace Microsoft.PowerShell.Commands {
   public class FileSystemProviderRemoveItemDynamicParameters {
     public FileSystemProviderRemoveItemDynamicParameters() { }
      
+#if PREVIEW2
     [System.Management.Automation.ParameterAttribute]
     [System.Management.Automation.ValidateNotNullOrEmptyAttribute]
     public string[] Stream { [System.Runtime.CompilerServices.CompilerGeneratedAttribute]get { return default(string[]); } [System.Runtime.CompilerServices.CompilerGeneratedAttribute]set { } }
-     
+#endif
   }
   [System.Management.Automation.CmdletAttribute("ForEach", "Object", SupportsShouldProcess=true, DefaultParameterSetName="ScriptBlockSet", HelpUri="http://go.microsoft.com/fwlink/?LinkID=113300", RemotingCapability=(System.Management.Automation.RemotingCapability)(0))]
   public sealed class ForEachObjectCommand : System.Management.Automation.PSCmdlet {
@@ -774,9 +775,10 @@ namespace Microsoft.PowerShell.Commands {
     public string Path { get { return default(string); } set { } }
     [System.Management.Automation.ParameterAttribute]
     public string[] Role { get { return default(string[]); } set { } }
+#if PREVIEW2
     [System.Management.Automation.ParameterAttribute(ParameterSetName="ShowWindow", Mandatory=true)]
     public System.Management.Automation.SwitchParameter ShowWindow { get { return default(System.Management.Automation.SwitchParameter); } set { } }
-     
+#endif
     protected override void BeginProcessing() { }
     protected override void ProcessRecord() { }
   }
@@ -1106,11 +1108,13 @@ namespace Microsoft.PowerShell.Commands {
     [System.Management.Automation.ParameterAttribute(Position=0, ParameterSetName="FilePathComputerName")]
     [System.Management.Automation.ValidateNotNullOrEmptyAttribute]
     public override string[] ComputerName { get { return default(string[]); } set { } }
+#if PREVIEW2
     [System.Management.Automation.ParameterAttribute(ValueFromPipelineByPropertyName=true, ParameterSetName="ComputerName")]
     [System.Management.Automation.ParameterAttribute(ValueFromPipelineByPropertyName=true, ParameterSetName="FilePathComputerName")]
     [System.Management.Automation.ParameterAttribute(ValueFromPipelineByPropertyName=true, ParameterSetName="FilePathUri")]
     [System.Management.Automation.ParameterAttribute(ValueFromPipelineByPropertyName=true, ParameterSetName="Uri")]
     public override string ConfigurationName { get { return default(string); } set { } }
+#endif
     [System.Management.Automation.AliasAttribute(new string[]{ "URI", "CU"})]
     [System.Management.Automation.ParameterAttribute(Position=0, ParameterSetName="FilePathUri")]
     [System.Management.Automation.ParameterAttribute(Position=0, ParameterSetName="Uri")]
@@ -1404,8 +1408,10 @@ namespace Microsoft.PowerShell.Commands {
   public class NewPSSessionConfigurationFileCommand : System.Management.Automation.PSCmdlet {
     public NewPSSessionConfigurationFileCommand() { }
      
+#if PREVIEW2
     [System.Management.Automation.ParameterAttribute]
     public System.Collections.Hashtable[] AliasDefinitions { get { return default(System.Collections.Hashtable[]); } set { } }
+#endif
     [System.Management.Automation.ParameterAttribute]
     public string[] AssembliesToLoad { get { return default(string[]); } set { } }
     [System.Management.Automation.ParameterAttribute]
@@ -1416,15 +1422,20 @@ namespace Microsoft.PowerShell.Commands {
     public string Copyright { get { return default(string); } set { } }
     [System.Management.Automation.ParameterAttribute]
     public string Description { get { return default(string); } set { } }
+#if PREVIEW2
     [System.Management.Automation.ParameterAttribute]
     public object EnvironmentVariables { get { return default(object); } set { } }
+#endif
     [System.Management.Automation.ParameterAttribute]
     public Microsoft.PowerShell.ExecutionPolicy ExecutionPolicy { get { return default(Microsoft.PowerShell.ExecutionPolicy); } set { } }
     [System.Management.Automation.ParameterAttribute]
     public string[] FormatsToProcess { get { return default(string[]); } set { } }
     [System.Management.Automation.ParameterAttribute]
+
+#if PREVIEW2
     public System.Collections.Hashtable[] FunctionDefinitions { get { return default(System.Collections.Hashtable[]); } set { } }
     [System.Management.Automation.ParameterAttribute]
+#endif
     public System.Guid Guid { get { return default(System.Guid); } set { } }
     [System.Management.Automation.ParameterAttribute]
     public System.Management.Automation.PSLanguageMode LanguageMode { get { return default(System.Management.Automation.PSLanguageMode); } set { } }
@@ -1448,11 +1459,13 @@ namespace Microsoft.PowerShell.Commands {
     public object VariableDefinitions { get { return default(object); } set { } }
     [System.Management.Automation.ParameterAttribute]
     public string[] VisibleAliases { get { return default(string[]); } set { } }
+#if PREVIEW2
     [System.Management.Automation.ParameterAttribute]
     public string[] VisibleCmdlets { get { return default(string[]); } set { } }
     [System.Management.Automation.ParameterAttribute]
     public string[] VisibleFunctions { get { return default(string[]); } set { } }
     [System.Management.Automation.ParameterAttribute]
+#endif
     public string[] VisibleProviders { get { return default(string[]); } set { } }
      
     protected override void ProcessRecord() { }
@@ -1674,9 +1687,11 @@ namespace Microsoft.PowerShell.Commands {
     [System.Management.Automation.AliasAttribute(new string[]{ "Cn"})]
     [System.Management.Automation.ParameterAttribute(Position=0, ValueFromPipelineByPropertyName=true, ParameterSetName="ComputerName")]
     public virtual string[] ComputerName { get { return default(string[]); } set { } }
+#if PREVIEW2
     [System.Management.Automation.ParameterAttribute(ValueFromPipelineByPropertyName=true, ParameterSetName="ComputerName")]
     [System.Management.Automation.ParameterAttribute(ValueFromPipelineByPropertyName=true, ParameterSetName="Uri")]
     public virtual string ConfigurationName { get { return default(string); } set { } }
+#endif
     [System.Management.Automation.AliasAttribute(new string[]{ "URI", "CU"})]
     [System.Management.Automation.ParameterAttribute(Position=0, Mandatory=true, ValueFromPipelineByPropertyName=true, ParameterSetName="Uri")]
     [System.Management.Automation.ValidateNotNullOrEmptyAttribute]
@@ -1765,9 +1780,11 @@ namespace Microsoft.PowerShell.Commands {
     [System.Management.Automation.AllowNullAttribute]
     [System.Management.Automation.ParameterAttribute]
     public System.Nullable<double> MaximumReceivedObjectSizeMB { get { return default(System.Nullable<double>); } set { } }
+#if PREVIEW2
     [System.Management.Automation.ParameterAttribute(ParameterSetName="AssemblyNameParameterSet")]
     [System.Management.Automation.ParameterAttribute(ParameterSetName="NameParameterSet")]
     public string[] ModulesToImport { get { return default(string[]); } set { } }
+#endif
     [System.Management.Automation.ParameterAttribute(Mandatory=true, Position=0, ValueFromPipelineByPropertyName=true, ParameterSetName="AssemblyNameParameterSet")]
     [System.Management.Automation.ParameterAttribute(Mandatory=true, Position=0, ValueFromPipelineByPropertyName=true, ParameterSetName="NameParameterSet")]
     [System.Management.Automation.ParameterAttribute(Mandatory=true, Position=0, ValueFromPipelineByPropertyName=true, ParameterSetName="SessionConfigurationFile")]
@@ -2096,11 +2113,13 @@ namespace Microsoft.PowerShell.Commands {
     [System.Management.Automation.ParameterAttribute(Mandatory=true, ParameterSetName="LiteralPath")]
     [System.Management.Automation.ValidateNotNullAttribute]
     public string[] LiteralPath { get { return default(string[]); } set { } }
+#if PREVIEW2
     [System.Management.Automation.AliasAttribute(new string[]{ "Name"})]
     [System.Management.Automation.ParameterAttribute(Position=1, ParameterSetName="LiteralPath", ValueFromPipelineByPropertyName=true)]
     [System.Management.Automation.ParameterAttribute(Position=1, ParameterSetName="Path", ValueFromPipelineByPropertyName=true)]
     [System.Management.Automation.ValidateNotNullAttribute]
     public string[] Module { get { return default(string[]); } set { } }
+#endif
      
     protected override void BeginProcessing() { }
     protected override void ProcessRecord() { }
@@ -2198,7 +2217,9 @@ namespace Microsoft.PowerShell.Commands {
     public override System.Management.Automation.Runspaces.AuthenticationMechanism Authentication { get { return default(System.Management.Automation.Runspaces.AuthenticationMechanism); } set { } }
     public override string CertificateThumbprint { get { return default(string); } set { } }
     public override string[] ComputerName { get { return default(string[]); } }
+#if PREVIEW2
     public override string ConfigurationName { get { return default(string); } set { } }
+#endif
     public override System.Uri[] ConnectionUri { get { return default(System.Uri[]); } }
     [System.Management.Automation.CredentialAttribute]
     [System.Management.Automation.ParameterAttribute(ParameterSetName="ComputerName")]
@@ -3395,7 +3416,9 @@ namespace System.Management.Automation {
     public System.Management.Automation.PSControl Control { get { return default(System.Management.Automation.PSControl); } }
     public string Name { get { return default(string); } }
      
+#if PREVIEW2
     public override string ToString() { return default(string); }
+#endif
   }
   public class ForwardedEventArgs : System.EventArgs {
     internal ForwardedEventArgs() { }
@@ -5435,7 +5458,9 @@ namespace System.Management.Automation {
     public RuntimeException(string message, System.Exception innerException, System.Management.Automation.ErrorRecord errorRecord) { }
      
     public virtual System.Management.Automation.ErrorRecord ErrorRecord { get { return default(System.Management.Automation.ErrorRecord); } }
+#if PREVIEW2
     public override string StackTrace { get { return default(string); } }
+#endif
     public bool WasThrownFromThrowStatement { get { return default(bool); } set { } }
   }
   [System.FlagsAttribute]
@@ -5448,6 +5473,7 @@ namespace System.Management.Automation {
     Unspecified = 16,
   }
   public class ScriptBlock {
+    ScriptBlock() { }
     public System.Management.Automation.Language.Ast Ast { get { return default(System.Management.Automation.Language.Ast); } }
     public System.Collections.Generic.List<System.Attribute> Attributes { get { return default(System.Collections.Generic.List<System.Attribute>); } }
     public string File { get { return default(string); } }
@@ -5512,7 +5538,9 @@ namespace System.Management.Automation {
   public enum SessionCapabilities {
     Language = 4,
     RemoteServer = 1,
+#if PREVIEW2
     WorkflowServer = 2,
+#endif
   }
   public sealed class SessionState {
     public SessionState() { }
@@ -6883,7 +6911,9 @@ namespace System.Management.Automation.Language {
     All = 0,
     Debug = 5,
     Error = 2,
+#if PREVIEW2
     Host = 6,
+#endif
     Output = 1,
     Verbose = 4,
     Warning = 3,
@@ -8104,7 +8134,9 @@ namespace System.Management.Automation.Runspaces {
     public abstract event System.EventHandler<System.Management.Automation.Runspaces.RunspaceAvailabilityEventArgs> AvailabilityChanged;
     public abstract event System.EventHandler<System.Management.Automation.Runspaces.RunspaceStateEventArgs> StateChanged;
      
+#if PREVIEW2
     public void ClearBaseTransaction() { }
+#endif
     public abstract void Close();
     public abstract void CloseAsync();
     public abstract void Connect();
