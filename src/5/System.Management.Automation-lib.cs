@@ -1,5 +1,6 @@
 namespace Microsoft.PowerShell {
   public sealed class DeserializingTypeConverter : System.Management.Automation.PSTypeConverter {
+    static DeserializingTypeConverter() { }
     public DeserializingTypeConverter() { }
 
     public override bool CanConvertFrom ( System.Management.Automation.PSObject sourceValue, System.Type destinationType ) { return default(bool); }
@@ -108,6 +109,7 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
+/*
    [System.Management.Automation.CmdletAttribute("Connect", "PSSession", DefaultParameterSetName = "Name", SupportsShouldProcess = true, HelpUri = "https://go.microsoft.com/fwlink/?LinkID=210604", RemotingCapability = (System.Management.Automation.RemotingCapability)3)]
    [System.Management.Automation.OutputTypeAttribute(new System.Type[] { typeof(System.Management.Automation.Runspaces.PSSession)})]
    public class ConnectPSSessionCommand : Microsoft.PowerShell.Commands.PSRunspaceCmdlet, System.IDisposable {
@@ -195,6 +197,7 @@ namespace Microsoft.PowerShell.Commands {
     protected override void StopProcessing (  ) { }
 
   }
+  */
 
    [System.Management.Automation.CmdletAttribute("Debug", "Job", DefaultParameterSetName = "JobParameterSet", SupportsShouldProcess = true, HelpUri = "https://go.microsoft.com/fwlink/?LinkId=330208")]
    public sealed class DebugJobCommand : System.Management.Automation.PSCmdlet {
@@ -214,6 +217,7 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
+/*
    [System.Management.Automation.CmdletAttribute("Disable", "PSRemoting", SupportsShouldProcess = true, ConfirmImpact = (System.Management.Automation.ConfirmImpact)2, HelpUri = "https://go.microsoft.com/fwlink/?LinkID=144298")]
    public sealed class DisablePSRemotingCommand : System.Management.Automation.PSCmdlet {
     public DisablePSRemotingCommand() { }
@@ -342,6 +346,7 @@ namespace Microsoft.PowerShell.Commands {
     protected override void StopProcessing (  ) { }
 
   }
+  */
 
    [System.Management.Automation.CmdletAttribute("Enter", "PSSession", DefaultParameterSetName = "ComputerName", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=135210", RemotingCapability = (System.Management.Automation.RemotingCapability)3)]
    public class EnterPSSessionCommand : Microsoft.PowerShell.Commands.PSRemotingBaseCmdlet {
@@ -413,6 +418,7 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
+   /*
    [System.Management.Automation.CmdletAttribute("Exit", "PSHostProcess", HelpUri = "https://go.microsoft.com/fwlink/?LinkId=403737")]
    public sealed class ExitPSHostProcessCommand : System.Management.Automation.PSCmdlet {
     public ExitPSHostProcessCommand() { }
@@ -420,6 +426,7 @@ namespace Microsoft.PowerShell.Commands {
     protected override void ProcessRecord (  ) { }
 
   }
+  */
 
    [System.Management.Automation.CmdletAttribute("Exit", "PSSession", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=135212")]
    public class ExitPSSessionCommand : Microsoft.PowerShell.Commands.PSRemotingCmdlet {
@@ -823,6 +830,7 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
+   /*
    [System.Management.Automation.CmdletAttribute("Get", "PSHostProcessInfo", DefaultParameterSetName = "ProcessNameParameterSet", HelpUri = "https://go.microsoft.com/fwlink/?LinkId=517012")]
    [System.Management.Automation.OutputTypeAttribute(new System.Type[] { typeof(Microsoft.PowerShell.Commands.PSHostProcessInfo)})]
    public sealed class GetPSHostProcessInfoCommand : System.Management.Automation.PSCmdlet {
@@ -855,6 +863,7 @@ namespace Microsoft.PowerShell.Commands {
     protected override void BeginProcessing (  ) { }
 
   }
+  */
 
   [System.Management.Automation.OutputTypeAttribute(new System.Type[] { typeof(System.Management.Automation.Runspaces.PSSession)})]
     [System.Management.Automation.CmdletAttribute("Get", "PSSession", DefaultParameterSetName = "Name", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=135219", RemotingCapability = (System.Management.Automation.RemotingCapability)3)]
@@ -957,6 +966,7 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
+   /*
    [System.Management.Automation.CmdletAttribute("Get", "PSSessionConfiguration", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=144304")]
    [System.Management.Automation.OutputTypeAttribute(new string[] { "Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration"})]
    public sealed class GetPSSessionConfigurationCommand : System.Management.Automation.PSCmdlet {
@@ -971,6 +981,7 @@ namespace Microsoft.PowerShell.Commands {
     protected override void ProcessRecord (  ) { }
 
   }
+  */
 
     [System.SerializableAttribute]
    public class HelpCategoryInvalidException : System.ArgumentException, System.Management.Automation.IContainsErrorRecord {
@@ -1557,6 +1568,7 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
+/*
    [System.Management.Automation.CmdletAttribute("New", "PSSession", DefaultParameterSetName = "ComputerName", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=135237", RemotingCapability = (System.Management.Automation.RemotingCapability)3)]
    [System.Management.Automation.OutputTypeAttribute(new System.Type[] { typeof(System.Management.Automation.Runspaces.PSSession)})]
    public class NewPSSessionCommand : Microsoft.PowerShell.Commands.PSRemotingBaseCmdlet, System.IDisposable {
@@ -1744,6 +1756,7 @@ namespace Microsoft.PowerShell.Commands {
     protected override void BeginProcessing (  ) { }
 
   }
+  */
 
    [System.Management.Automation.CmdletAttribute("New", "PSTransportOption", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=210608", RemotingCapability = (System.Management.Automation.RemotingCapability)0)]
    [System.Management.Automation.OutputTypeAttribute(new System.Type[] { typeof(Microsoft.PowerShell.Commands.WSManConfigurationOption)})]
@@ -1862,11 +1875,13 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
+  /*
   public enum OutTarget {
     Default = 0,
     Host = 1,
     Job = 2,
   }
+  */
 
   public class PSEditionArgumentCompleter : System.Management.Automation.IArgumentCompleter {
     public PSEditionArgumentCompleter() { }
@@ -1922,12 +1937,14 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
+  /*
   public sealed class PSHostProcessInfo {
     internal PSHostProcessInfo() { }
     public string AppDomainName { get { return default(string); } private set { } }
     public int ProcessId { get { return default(int); } private set { } }
     public string ProcessName { get { return default(string); } private set { } }
   }
+  */
 
   public abstract class PSRemotingBaseCmdlet : Microsoft.PowerShell.Commands.PSRemotingCmdlet {
     protected PSRemotingBaseCmdlet() { }
@@ -2045,6 +2062,7 @@ namespace Microsoft.PowerShell.Commands {
     protected System.Collections.Generic.Dictionary<System.Guid, System.Management.Automation.Runspaces.PSSession> GetMatchingRunspacesByRunspaceId(bool writeErrorOnNoMatch) { return default(System.Collections.Generic.Dictionary<System.Guid, System.Management.Automation.Runspaces.PSSession>); }
   }
 
+  /*
   public class PSSessionConfigurationCommandBase : System.Management.Automation.PSCmdlet {
     internal PSSessionConfigurationCommandBase() { }
 
@@ -2102,6 +2120,7 @@ namespace Microsoft.PowerShell.Commands {
     [System.Management.Automation.ParameterAttribute]
     public System.Management.Automation.SwitchParameter UseSharedProcess { get { return default(System.Management.Automation.SwitchParameter); } set { } }
   }
+  */
 
    [System.Management.Automation.CmdletAttribute("Receive", "Job", DefaultParameterSetName = "Location", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=113372", RemotingCapability = (System.Management.Automation.RemotingCapability)2)]
    public class ReceiveJobCommand : Microsoft.PowerShell.Commands.JobCmdletBase, System.IDisposable {
@@ -2147,6 +2166,7 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
+   /*
    [System.Management.Automation.CmdletAttribute("Receive", "PSSession", DefaultParameterSetName = "Session", SupportsShouldProcess = true, HelpUri = "https://go.microsoft.com/fwlink/?LinkID=217037", RemotingCapability = (System.Management.Automation.RemotingCapability)3)]
    public class ReceivePSSessionCommand : Microsoft.PowerShell.Commands.PSRemotingCmdlet {
     public ReceivePSSessionCommand() { }
@@ -2218,7 +2238,7 @@ namespace Microsoft.PowerShell.Commands {
     [System.Management.Automation.ParameterAttribute(ParameterSetName = "Session")]
     [System.Management.Automation.ParameterAttribute(ParameterSetName = "ConnectionUriSessionName")]
     [System.Management.Automation.ParameterAttribute(ParameterSetName = "ConnectionUriInstanceId")]
-    public Microsoft.PowerShell.Commands.OutTarget OutTarget { get { return default(Microsoft.PowerShell.Commands.OutTarget); } set { } }
+    // public Microsoft.PowerShell.Commands.OutTarget OutTarget { get { return default(Microsoft.PowerShell.Commands.OutTarget); } set { } }
     [System.Management.Automation.ParameterAttribute(ParameterSetName = "ComputerInstanceId")]
     [System.Management.Automation.ParameterAttribute(ParameterSetName = "ComputerSessionName")]
     [System.Management.Automation.ValidateRangeAttribute(1, 65535)]
@@ -2257,6 +2277,7 @@ namespace Microsoft.PowerShell.Commands {
     protected override void ProcessRecord (  ) { }
 
   }
+  */
 
   [System.Management.Automation.OutputTypeAttribute(new System.Type[] { typeof(System.Management.Automation.Job)}, ParameterSetName = new string[1] { "JobParameterSet" })]
     [System.Management.Automation.CmdletAttribute("Remove", "Job", DefaultParameterSetName = "SessionIdParameterSet", SupportsShouldProcess = true, HelpUri = "https://go.microsoft.com/fwlink/?LinkID=113377")]
@@ -2423,6 +2444,7 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
+   /*
    [System.Management.Automation.CmdletAttribute("Set", "PSSessionConfiguration", DefaultParameterSetName = "NameParameterSet", SupportsShouldProcess = true, ConfirmImpact = (System.Management.Automation.ConfirmImpact)2, HelpUri = "https://go.microsoft.com/fwlink/?LinkID=144307")]
    public sealed class SetPSSessionConfigurationCommand : Microsoft.PowerShell.Commands.PSSessionConfigurationCommandBase {
     public SetPSSessionConfigurationCommand() { }
@@ -2432,6 +2454,7 @@ namespace Microsoft.PowerShell.Commands {
     protected override void ProcessRecord (  ) { }
 
   }
+  */
 
    [System.Management.Automation.CmdletAttribute("Set", "StrictMode", DefaultParameterSetName = "Version", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=113450")]
    public class SetStrictModeCommand : System.Management.Automation.PSCmdlet {
@@ -2587,6 +2610,7 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
+   /*
    [System.Management.Automation.CmdletAttribute("Test", "PSSessionConfigurationFile", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=217039")]
    [System.Management.Automation.OutputTypeAttribute(new System.Type[] { typeof(System.Boolean)})]
    public class TestPSSessionConfigurationFileCommand : System.Management.Automation.PSCmdlet {
@@ -2616,8 +2640,10 @@ namespace Microsoft.PowerShell.Commands {
     protected override void ProcessRecord (  ) { }
 
   }
+  */
 
   public class UpdatableHelpCommandBase : System.Management.Automation.PSCmdlet {
+    static UpdatableHelpCommandBase() { }
     internal UpdatableHelpCommandBase() { }
 
     [System.Management.Automation.CredentialAttribute]
@@ -2873,10 +2899,12 @@ namespace Microsoft.PowerShell.Commands {
 
 }
 namespace Microsoft.PowerShell.Commands.Internal {
+  /*
   public static class RemotingErrorResources {
     public static string CouldNotResolveRoleDefinitionPrincipal { get { return default(string); } }
     public static string WinRMRestartWarning { get { return default(string); } }
   }
+  */
 
 }
 namespace Microsoft.PowerShell.Commands.Internal.Format {
@@ -3413,6 +3441,7 @@ namespace System.Management.Automation {
   }
 
   public static class CompletionCompleters {
+    static CompletionCompleters() { }
     public static System.Collections.Generic.IEnumerable<System.Management.Automation.CompletionResult> CompleteCommand ( string commandName ) { return default(System.Collections.Generic.IEnumerable<System.Management.Automation.CompletionResult>); }
     public static System.Collections.Generic.IEnumerable<System.Management.Automation.CompletionResult> CompleteCommand ( string commandName, string moduleName, System.Management.Automation.CommandTypes commandTypes ) { return default(System.Collections.Generic.IEnumerable<System.Management.Automation.CompletionResult>); }
     public static System.Collections.Generic.IEnumerable<System.Management.Automation.CompletionResult> CompleteFilename ( string fileName ) { return default(System.Collections.Generic.IEnumerable<System.Management.Automation.CompletionResult>); }
@@ -3630,7 +3659,6 @@ namespace System.Management.Automation {
     public abstract void SetDebuggerAction ( System.Management.Automation.DebuggerResumeAction resumeAction );
     public virtual void SetDebuggerStepMode ( bool enabled ) { }
     public virtual void SetDebugMode ( System.Management.Automation.DebugModes mode ) { }
-    public virtual void SetParent ( System.Management.Automation.Debugger parent, System.Collections.Generic.IEnumerable<System.Management.Automation.Breakpoint> breakPoints, System.Nullable<System.Management.Automation.DebuggerResumeAction> startAction, System.Management.Automation.Host.PSHost host, System.Management.Automation.PathInfo path, System.Collections.Generic.Dictionary<string, System.Management.Automation.DebugSource> functionSourceMap ) { }
     public virtual void SetParent ( System.Management.Automation.Debugger parent, System.Collections.Generic.IEnumerable<System.Management.Automation.Breakpoint> breakPoints, System.Nullable<System.Management.Automation.DebuggerResumeAction> startAction, System.Management.Automation.Host.PSHost host, System.Management.Automation.PathInfo path ) { }
     public abstract void StopProcessCommand (  );
 
@@ -3683,6 +3711,7 @@ namespace System.Management.Automation {
 
   }
 
+  /*
   public sealed class DebugSource {
     public DebugSource(string script, string scriptFile, string xamlDefinition) { }
 
@@ -3690,6 +3719,7 @@ namespace System.Management.Automation {
     public string ScriptFile { get { return default(string); } private set { } }
     public string XamlDefinition { get { return default(string); } private set { } }
   }
+  */
 
    public sealed class DefaultParameterDictionary : System.Collections.Hashtable {
     public DefaultParameterDictionary() { }
@@ -4505,6 +4535,7 @@ namespace System.Management.Automation {
   }
 
   public static class LanguagePrimitives {
+    static LanguagePrimitives() { }
     public static int Compare ( object first, object second ) { return default(int); }
     public static int Compare ( object first, object second, bool ignoreCase ) { return default(int); }
     public static int Compare ( object first, object second, bool ignoreCase, System.IFormatProvider formatProvider ) { return default(int); }
@@ -4524,6 +4555,17 @@ namespace System.Management.Automation {
     public static bool TryConvertTo ( object valueToConvert, System.Type resultType, out object result ) {result = default(object);  return default(bool); }
     public static bool TryConvertTo<T> ( object valueToConvert, System.IFormatProvider formatProvider, out T result ) { result = default(T); return default(bool); }
     public static bool TryConvertTo<T> ( object valueToConvert, out T result ) { result = default(T); return default(bool); }
+
+    internal class EnumMultipleTypeConverter : EnumSingleTypeConverter {
+        public override object ConvertFrom(object sourceValue, System.Type destinationType, System.IFormatProvider formatProvider, bool ignoreCase) { return default(object); }
+    }
+
+    internal class EnumSingleTypeConverter : System.Management.Automation.PSTypeConverter {
+        public override bool CanConvertFrom(object sourceValue, System.Type destinationType) { return default(bool); }
+        public override object ConvertFrom(object sourceValue, System.Type destinationType, System.IFormatProvider formatProvider, bool ignoreCase) { return default(object); }
+        public override bool CanConvertTo(object sourceValue, System.Type destinationType)  { return default(bool); }
+        public override object ConvertTo(object sourceValue, System.Type destinationType, System.IFormatProvider formatProvider, bool ignoreCase) { return default(object); }
+    }
 
   }
 
@@ -5710,6 +5752,7 @@ namespace System.Management.Automation {
   }
 
  [System.FlagsAttribute]
+ [System.ComponentModel.TypeConverterAttribute(typeof(System.Management.Automation.LanguagePrimitives.EnumMultipleTypeConverter))]
    public enum PSMemberTypes {
     AliasProperty = 1,
     All = 8191,
@@ -5730,6 +5773,7 @@ namespace System.Management.Automation {
   }
 
  [System.FlagsAttribute]
+ [System.ComponentModel.TypeConverterAttribute(typeof(System.Management.Automation.LanguagePrimitives.EnumMultipleTypeConverter))]
    public enum PSMemberViewTypes {
     Adapted = 2,
     All = 7,
@@ -5865,6 +5909,7 @@ namespace System.Management.Automation {
   }
 
     [System.SerializableAttribute]
+    [System.ComponentModel.TypeDescriptionProvider(typeof(System.Management.Automation.PSObjectTypeDescriptionProvider))]
    public class PSObject : System.IFormattable, System.IComparable, System.Runtime.Serialization.ISerializable, System.Dynamic.IDynamicMetaObjectProvider {
     public PSObject() { }
     public PSObject(object obj) { }
@@ -8141,6 +8186,7 @@ namespace System.Management.Automation.Runspaces {
   }
 
   public abstract class Runspace : System.IDisposable {
+    static Runspace() { }
     internal Runspace() { }
     public abstract event System.EventHandler<System.Management.Automation.Runspaces.RunspaceAvailabilityEventArgs> AvailabilityChanged;
     public abstract event System.EventHandler<System.Management.Automation.Runspaces.RunspaceStateEventArgs> StateChanged;
@@ -8224,6 +8270,7 @@ namespace System.Management.Automation.Runspaces {
   }
 
   public static class RunspaceFactory {
+    static RunspaceFactory() { }
     public static System.Management.Automation.Runspaces.Runspace CreateOutOfProcessRunspace ( System.Management.Automation.Runspaces.TypeTable typeTable ) { return default(System.Management.Automation.Runspaces.Runspace); }
     public static System.Management.Automation.Runspaces.Runspace CreateRunspace ( System.Management.Automation.Runspaces.RunspaceConnectionInfo connectionInfo ) { return default(System.Management.Automation.Runspaces.Runspace); }
     public static System.Management.Automation.Runspaces.Runspace CreateRunspace ( System.Management.Automation.Host.PSHost host, System.Management.Automation.Runspaces.RunspaceConnectionInfo connectionInfo ) { return default(System.Management.Automation.Runspaces.Runspace); }
@@ -8541,6 +8588,7 @@ namespace System.Management.Automation.Runspaces {
   }
 
   public sealed class TypeTable {
+    static TypeTable() { }
     public TypeTable(System.Collections.Generic.IEnumerable<string> typeFiles) { }
 
     public void AddType ( System.Management.Automation.Runspaces.TypeData typeData ) { }
@@ -8609,7 +8657,7 @@ namespace System.Management.Automation.Runspaces {
 
 }
 namespace System.Management.Automation.Language {
-  internal partial interface IParameterMetadataProvider {
+  internal interface IParameterMetadataProvider {
     System.Management.Automation.Language.ScriptBlockAst Body { get; }
     System.Collections.ObjectModel.ReadOnlyCollection<System.Management.Automation.Language.ParameterAst> Parameters { get; }
     // internal methods not included
@@ -9195,7 +9243,7 @@ namespace System.Management.Automation.Language {
     public bool IsFilter { get { return default(bool); } private set { } }
     public bool IsWorkflow { get { return default(bool); } private set { } }
     public string Name { get { return default(string); } private set { } }
-    public System.Collections.ObjectModel.ReadOnlyCollection<System.Management.Automation.Language.ParameterAst> Parameters { get { return default(System.Collections.ObjectModel.ReadOnlyCollection<System.Management.Automation.Language.ParameterAst>); } }
+    public System.Collections.ObjectModel.ReadOnlyCollection<System.Management.Automation.Language.ParameterAst> Parameters { get; private set { } }
     public override System.Management.Automation.Language.Ast Copy (  ) { return default(System.Management.Automation.Language.Ast); }
     public System.Management.Automation.Language.CommentHelpInfo GetHelpContent ( System.Collections.Generic.Dictionary<System.Management.Automation.Language.Ast, System.Management.Automation.Language.Token[]> scriptBlockTokenCache ) { return default(System.Management.Automation.Language.CommentHelpInfo); }
     public System.Management.Automation.Language.CommentHelpInfo GetHelpContent (  ) { return default(System.Management.Automation.Language.CommentHelpInfo); }
