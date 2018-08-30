@@ -109,7 +109,6 @@ namespace Microsoft.PowerShell.Commands {
 
   }
 
-/*
    [System.Management.Automation.CmdletAttribute("Connect", "PSSession", DefaultParameterSetName = "Name", SupportsShouldProcess = true, HelpUri = "https://go.microsoft.com/fwlink/?LinkID=210604", RemotingCapability = (System.Management.Automation.RemotingCapability)3)]
    [System.Management.Automation.OutputTypeAttribute(new System.Type[] { typeof(System.Management.Automation.Runspaces.PSSession)})]
    public class ConnectPSSessionCommand : Microsoft.PowerShell.Commands.PSRunspaceCmdlet, System.IDisposable {
@@ -197,7 +196,6 @@ namespace Microsoft.PowerShell.Commands {
     protected override void StopProcessing (  ) { }
 
   }
-  */
 
    [System.Management.Automation.CmdletAttribute("Debug", "Job", DefaultParameterSetName = "JobParameterSet", SupportsShouldProcess = true, HelpUri = "https://go.microsoft.com/fwlink/?LinkId=330208")]
    public sealed class DebugJobCommand : System.Management.Automation.PSCmdlet {
@@ -9243,7 +9241,7 @@ namespace System.Management.Automation.Language {
     public bool IsFilter { get { return default(bool); } private set { } }
     public bool IsWorkflow { get { return default(bool); } private set { } }
     public string Name { get { return default(string); } private set { } }
-    public System.Collections.ObjectModel.ReadOnlyCollection<System.Management.Automation.Language.ParameterAst> Parameters { get; private set { } }
+    public System.Collections.ObjectModel.ReadOnlyCollection<System.Management.Automation.Language.ParameterAst> Parameters { get { return default (System.Collections.ObjectModel.ReadOnlyCollection<System.Management.Automation.Language.ParameterAst>); } private set { } }
     public override System.Management.Automation.Language.Ast Copy (  ) { return default(System.Management.Automation.Language.Ast); }
     public System.Management.Automation.Language.CommentHelpInfo GetHelpContent ( System.Collections.Generic.Dictionary<System.Management.Automation.Language.Ast, System.Management.Automation.Language.Token[]> scriptBlockTokenCache ) { return default(System.Management.Automation.Language.CommentHelpInfo); }
     public System.Management.Automation.Language.CommentHelpInfo GetHelpContent (  ) { return default(System.Management.Automation.Language.CommentHelpInfo); }
