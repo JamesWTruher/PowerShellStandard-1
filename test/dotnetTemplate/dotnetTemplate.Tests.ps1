@@ -1,3 +1,11 @@
+$nugetConfig = @'
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <add key="local-packages" value="../../.." />
+  </packageSources>
+</configuration>
+'@
 Describe "PowerShell Standard C# Module Template" {
     Context "Targeting PowerShell Standard 5.1" {
         BeforeAll {
@@ -13,6 +21,8 @@ Describe "PowerShell Standard C# Module Template" {
             New-Item $testFolder -ItemType Directory
             Push-Location $testFolder
             dotnet new psmodule
+            # be sure to set up nuget to find the local package
+            $nugetConfig | Set-Content NuGet.Config
         }
         It "Can package the module that was created" {
             dotnet publish --configuration Release
@@ -52,6 +62,8 @@ Describe "PowerShell Standard C# Module Template" {
             New-Item $testFolder -ItemType Directory
             Push-Location $testFolder
             dotnet new psmodule -v 3.0.0-preview-02
+            # be sure to set up nuget to find the local package
+            $nugetConfig | Set-Content NuGet.Config
         }
         It "Can package the module that was created" {
             dotnet publish --configuration Release

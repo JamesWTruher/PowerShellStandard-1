@@ -62,6 +62,7 @@ function Invoke-Test {
         }
     }
 
+    Export-NuGetPackage
     try {
         Push-Location (Join-Path $PsScriptRoot "test/dotnetTemplate")
         Invoke-Pester
