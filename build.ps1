@@ -34,6 +34,9 @@ else {
 }
 
 if ( $Test ) {
+    if ( $psversiontable.psversion.major -lt 6 ) {
+        throw "Must run tests on PowerShell Core 6 or above"
+    }
     Invoke-Test -CoreOnly:$CoreOnly
 }
 
