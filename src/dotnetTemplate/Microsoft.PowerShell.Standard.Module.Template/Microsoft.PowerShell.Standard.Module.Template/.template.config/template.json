@@ -16,10 +16,10 @@
     "PowerShellStandardVersion":{
       "type": "parameter",
       "datatype":"choice",
-      "defaultValue": "5.1.0",
+      "defaultValue": "5.1.1",
       "choices": [
         {
-          "choice": "5.1.0",
+          "choice": "5.1.1",
           "description": "PowerShell Standard 5.1"
         },
         {

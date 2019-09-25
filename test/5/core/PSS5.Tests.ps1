@@ -176,7 +176,8 @@ Describe 'PowerShell Standard 5' {
             $smaT = [psobject].assembly.GetTypes()|?{$_.IsPublic}|Sort-Object FullName
             $asmT = $standardAssembly.GetTypes()|?{$_.IsPublic}|Sort-Object FullName
             # These are the types which we expect to not be in the standard library
-            $expectedMissingTypes = @{ Name = 'Microsoft.PowerShell.ProcessCodeMethods' },
+            $expectedMissingTypes =
+                @{ Name = 'Microsoft.PowerShell.ProcessCodeMethods' },
                 @{ Name = 'Microsoft.PowerShell.DesiredStateConfiguration.ArgumentToConfigurationDataTransformationAttribute' },
                 @{ Name = 'Microsoft.PowerShell.DesiredStateConfiguration.Internal.DscRemoteOperationsClass' },
                 @{ Name = 'Microsoft.PowerShell.DesiredStateConfiguration.Internal.DscClassCache' },
