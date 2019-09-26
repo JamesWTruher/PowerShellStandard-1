@@ -7587,7 +7587,7 @@ namespace System.Management.Automation.Runspaces {
 
   }
 
-  internal class RunspaceCreatedEventArgs : System.EventArgs {
+  internal sealed class RunspaceCreatedEventArgs : System.EventArgs {
     internal RunspaceCreatedEventArgs() { }
   }
 
