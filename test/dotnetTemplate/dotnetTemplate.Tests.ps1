@@ -51,7 +51,7 @@ Describe "PowerShell Standard C# Module Template" {
             dotnet new -i "$PSScriptRoot/../../src/dotnetTemplate/Microsoft.PowerShell.Standard.Module.Template/Microsoft.PowerShell.Standard.Module.Template/"
             New-Item $testFolder -ItemType Directory
             Push-Location $testFolder
-            dotnet new psmodule -v 3.0.0-preview-02
+            dotnet new psmodule -v 3.0.0
         }
         It "Can package the module that was created" {
             dotnet publish --configuration Release

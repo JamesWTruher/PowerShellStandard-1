@@ -23,7 +23,7 @@
           "description": "PowerShell Standard 5.1"
         },
         {
-          "choice": "3.0.0-preview-02",
+          "choice": "3.0.0",
           "description": "PowerShell Standard 3.0"
         }
       ],
