@@ -132,7 +132,7 @@ Hello 'jane'
 PS> exit
 
 PS> $m = "C:\Users\jimtru\DOCUME~1\VIBB41~1\Projects\CLASSL~2\CLASSL~1\bin\Debug"
-PS> docker run --rm -it -v "${m}:/module" mcr.microsoft.com/powershell:preview
+PS> docker run --rm -it -v "${m}:/module" mcr.microsoft.com/powershell
 PowerShell 6.2.0-rc.1
 Copyright (c) Microsoft Corporation. All rights reserved.
 

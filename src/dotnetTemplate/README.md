@@ -95,9 +95,9 @@ PowerShell Standard Module (C#)
 Author: Microsoft Corporation
 Options:
   -v|--powershell-standard-version
-                                        7.0.0-preview.1     - PowerShell Standard 7.0.0-preview.1
-                                        3.0.0-preview-02    - PowerShell Standard 3.0
-                                    Default: 7.0.0-preview.1
+                                        7.0.0   - PowerShell Standard 7.0.0
+                                        3.0.0   - PowerShell Standard 3.0
+                                    Default: 7.0.0
 
   --no-restore                      If specified, skips the automatic restore of the project on create.
                                     bool - Optional
@@ -125,7 +125,7 @@ Notice that it restores automatically.
 You can optionally specify PowerShell Standard V3 by running:
 
 ```text
-dotnet new psmodule --powershell-standard-version 3.0.0-preview-02
+dotnet new psmodule --powershell-standard-version 3.0.0
 ```
 
 This template will create:
