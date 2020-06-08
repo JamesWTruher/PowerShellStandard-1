@@ -3,21 +3,26 @@
   <metadata>
     <id>PowerShellStandard.Library</id>
     <version>3.0.0</version>
+    <title>PowerShellStandard.Library</title>
     <authors>Microsoft</authors>
     <owners>Microsoft,PowerShellTeam</owners>
     <projectUrl>https://github.com/PowerShell/PowerShellStandard</projectUrl>
-    <iconUrl>https://github.com/PowerShell/PowerShell/blob/master/assets/Powershell_64.png</iconUrl>
-    <licenseUrl>https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt</licenseUrl>
+    <icon>images\PowerShell_64.png</icon>
+    <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Common APIs available to both Windows PowerShell 3.0 (and newer) and PowerShell Core 6 to enable the same C# module to work in both environments.</description>
-    <copyright>(c) Microsoft Corporation. All rights reserved.</copyright>
-    <tags>PowerShell, reference, netstandard2, netstandard2.0</tags>
+    <description>Common APIs available to both Windows PowerShell 3.0 (and newer) and PowerShell 7 to enable the same C# module to work in both environments.</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>PowerShell, reference, net452, netstandard2, netstandard2.0</tags>
     <references>
-      <reference file="System.Management.Automation.dll" />
+      <group>
+        <reference file="System.Management.Automation.dll" />
+      </group>
     </references>
   </metadata>
   <files>
-    <file src="obj/Release/netstandard2.0/System.Management.Automation.dll" target="lib/netstandard2.0" />
+    <file src="images\PowerShell_64.png" target="images\" />
+    <file src="netstandard2.0/System.Management.Automation.dll" target="lib/netstandard2.0" />
+    <file src="net451/System.Management.Automation.dll" target="lib/net451" />
   </files>
 </package>
 
