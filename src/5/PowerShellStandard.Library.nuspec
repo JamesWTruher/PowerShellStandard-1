@@ -18,6 +18,14 @@
         <reference file="System.Management.Automation.dll" />
       </group>
     </references>
+    <dependencies>
+      <group targetFramework="netstandard2.0">
+        <dependency id="Newtonsoft.Json" version="12.0.3" />
+      </group>
+      <group targetFramework="net452">
+        <dependency id="Newtonsoft.Json" version="12.0.3" />
+      </group>
+    </dependencies>
   </metadata>
   <files>
     <file src="images\PowerShell_64.png" target="images\" />
