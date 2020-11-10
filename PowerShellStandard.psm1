@@ -46,25 +46,20 @@ function Start-Build {
 }
 
 function Start-Clean {
-    $dirs = "src","test"
-    $versions = 3,5
-    # clean up test/3. test/5, src/3, src/5
+    $dirs = "test/3/core","test/3/full","test/5/core","test/5/full","src/3","src/5"
     foreach ( $directory in $dirs ) {
-        $baseDir = Join-Path $PsScriptRoot $directory
-        foreach ( $version in $versions ) {
-            try {
-                $fileDir = Join-Path $baseDir $version
-                Push-Location $fileDir
-                "Cleaning in $fileDir"
-                $result = dotnet clean
-                if ( ! $? ) { write-error "$result" }
-                if ( test-path obj ) { remove-item -recurse -force obj }
-                if ( test-path bin ) { remove-item -recurse -force bin }
-                remove-item "PowerShellStandard.Library.${version}*.nupkg" -ErrorAction SilentlyContinue
-            }
-            finally {
-                Pop-Location
-            }
+        $buildDir = Join-Path $PsScriptRoot $directory
+        try {
+            Push-Location $buildDir
+            "Cleaning in $buildDir"
+            $result = dotnet clean
+            if ( ! $? ) { write-error "$result" }
+            if ( test-path obj ) { remove-item -recurse -force obj }
+            if ( test-path bin ) { remove-item -recurse -force bin }
+            remove-item "PowerShellStandard.Library.${version}*.nupkg" -ErrorAction SilentlyContinue
+        }
+        finally {
+            Pop-Location
         }
     }
     Remove-Item "${PSScriptRoot}/*.nupkg"
