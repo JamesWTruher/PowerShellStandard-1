@@ -68,10 +68,11 @@ function Start-Clean {
 function Invoke-Test {
     param ( [switch]$CoreOnly )
     # first, run the package tests and validate that the signing.xml file is correct
+    $results = @()
     try {
         $testBase = Join-Path $PsScriptRoot test
         Push-Location $testBase
-        Invoke-Pester -Path ./Build.Tests.ps1
+        $results += Invoke-Pester -Path ./Build.Tests.ps1 -PassThru
     }
     finally {
         Pop-Location
@@ -90,12 +91,12 @@ function Invoke-Test {
                     if ( $CoreOnly ) {
                         $result = dotnet build --configuration Release --framework netstandard2.0
                         if ( ! $? ) { throw "$result" }
-                        Invoke-Pester
+                        $results += Invoke-Pester -PassThru
                     }
                     else {
                         $result = dotnet build --configuration Release
                         if ( ! $? ) { throw "$result" }
-                        Invoke-Pester
+                        $results += Invoke-Pester -PassThru
                     }
                 }
                 finally {
@@ -110,10 +111,15 @@ function Invoke-Test {
 
     try {
         Push-Location (Join-Path $PsScriptRoot "test/dotnetTemplate")
-        Invoke-Pester
+        $results += Invoke-Pester -PassThru
     }
     finally {
         Pop-Location
+    }
+    $failures = $results | Where-Object { $_.Result -eq "Failed" }
+    if ( $failures ) {
+        $failures.StackTrace | WriteError
+        throw "Test Failures"
     }
 }
 
