@@ -1,0 +1,59 @@
+name: PR-$(System.PullRequest.PullRequestNumber)-$(Date:yyyyMMdd)$(Rev:.rr)
+trigger:
+  # Batch merge builds together while a merge build is running
+  batch: true
+  branches:
+    include:
+    - master
+    - release*
+pr:
+  branches:
+    include:
+    - master
+    - release*
+
+resources:
+  repositories:
+  - repository: ComplianceRepo
+    type: github
+    endpoint: ComplianceGHRepo
+    name: PowerShell/compliance
+
+stages:
+- stage: Build
+  pool:
+    vmImage: windows-latest
+  displayName: Build PowerShellStandard.Library
+  jobs:
+  - job: Build
+    displayName: Build
+    steps:
+    - pwsh: |
+        ./build.ps1
+        new-item -type directory out
+        copy-item *.nupkg out
+      displayName: Build
+    - publish: "out/"
+      artifact: out
+
+- stage: Test
+  displayName: Test PowerShellStandard.Library
+  jobs:
+  - job: test
+    displayName: test standard library
+    steps:
+    - pwsh:
+        ./build.ps1 -test
+
+- stage: Compliance
+  displayName: Compliance PowerShellStandard.Library
+  dependsOn: Build
+  jobs:
+  - job: Compliance_Job
+    pool:
+      vmImage: windows-latest
+    steps:
+    - checkout: self
+    - checkout: ComplianceRepo
+    - template: ci-compliance.yml@ComplianceRepo
+
